@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+
+    stages{
+        stage("Stage-1"){
+            step{
+                echo "Run Maven targets"
+            }
+        }
+        stage("stage-2"){
+            step{
+                echo "docker run commands"
+            }
+        }
+    }
+
+    post{
+    echo "do post build activities"
+    }
+}

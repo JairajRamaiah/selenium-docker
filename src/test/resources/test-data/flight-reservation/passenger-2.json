@@ -1,0 +1,11 @@
+{
+	"firstname":"Test1",
+	"lastname":"Test2",
+	"email":"Test123@testmail.com",
+	"password":"Test@12345",
+	"city":"Arial",
+	"state":"Georgia",
+	"zip":"56602522",
+	"passengersCount": "Two",
+    "expectedPrice":"$1169 USD"
+}

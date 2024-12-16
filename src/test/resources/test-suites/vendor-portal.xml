@@ -1,0 +1,20 @@
+<suite name="Vendor-portal-TestSuite" parallel="tests" thread-count="3">
+    <test name="sam-json">
+        <parameter name="testDataPath" value="test-data/vendor-portal/sam.json"/>
+        <classes>
+            <class name="com.drjautosel.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+    <test name="mike-json">
+        <parameter name="testDataPath" value="test-data/vendor-portal/mike.json"/>
+        <classes>
+            <class name="com.drjautosel.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+    <test name="john-json">
+        <parameter name="testDataPath" value="test-data/vendor-portal/john.json"/>
+        <classes>
+            <class name="com.drjautosel.tests.vendorportal.VendorPortalTest"/>
+        </classes>
+    </test>
+</suite>
