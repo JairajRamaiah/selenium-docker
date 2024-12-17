@@ -1,22 +1,32 @@
 pipeline{
     agent any
         stages{
-            stage("Build Jar"){
+            stage('Build Jar'){
                 steps{
                    bat  "mvn clean package -DskipTests"
                 }
             }
 
-            stage("Build Image"){
+            stage('Build Image'){
                 steps{
                     bat "docker push jairaj07/selenium ."
                 }
             }
 
-            stage("Push Image to Docker Hub"){
-                steps{
-                    bat "docker push jairaj07/selenium"
+            stage('Push Image to Docker Hub'){
+                environment{
+                    DOCKER_HUB = credentials("dockerhub-credentials")
                 }
+                    steps{
+                        bat 'docker login -u ${DOCKER_HUB_USR} -p ${DOCKER_HUB_PSW}'
+                        bat "docker push jairaj07/selenium"
+                    }
+            }
+        }
+
+        post{
+            always{
+                bat 'docker logout'
             }
         }
 }
