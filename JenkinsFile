@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
     agent any
         stages{
             stage('Build Jar'){
@@ -27,9 +27,11 @@ pipeline{
             }
         }
 
+
         post{
-            always{
-                bat 'docker logout'
+           always{
+               docker 'logout'
             }
         }
 }
+
